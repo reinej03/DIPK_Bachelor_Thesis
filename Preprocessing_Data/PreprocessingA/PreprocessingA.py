@@ -50,7 +50,7 @@ for each_row in f:
     gene_list.append(each_row.strip())
 
 dataset = pd.read_csv('../Data/human_ppi_features.tsv', header=0, sep='\t', index_col=0)
-index = [i for i, elem in enumerate(gene_list) if elem in dataset.index] #this line was taken from ChatGPT!
+index = [i for i, elem in enumerate(gene_list) if elem in dataset.index] #this line was taken from ChatGPT! [CG1]
 BIONIC_df=dataset[dataset.index.isin(gene_list)]
 BIONIC_df.index=index
 

@@ -22,7 +22,7 @@ GEF_df = pd.DataFrame(GEF, index=RMA_df.index)
 cell_line_details = pd.read_csv('../Data/Cell_Lines_Details.csv', header=0, sep=';', index_col=1)
 
 cell_line_details.index = cell_line_details.index.astype(str)
-GEF_df.index = GEF_df.index.astype(str).str.replace(r'\.0', '', regex=True) #this line was taken from ChatGPT!
+GEF_df.index = GEF_df.index.astype(str).str.replace(r'\.0', '', regex=True) #this line was taken from ChatGPT! [CG2]
 GEF_df = GEF_df[GEF_df.index.isin(cell_line_details.index)]
 GEF_df.index = cell_line_details.loc[GEF_df.index, 'Line']
 
